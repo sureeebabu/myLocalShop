@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tender Goat - Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img
+    src="https://static.freshtohome.com/media/catalog/product/cache/8/image/600x400/18ae109e34f485bd0b0c075abec96b2e/m/u/mutton-curry-cut.jpg">
+
+  <div class="ion-padding">
+    <ion-text color="dark">
+      <b>Premium Tender Goat - Curry Cut (include bones)</b>
+    </ion-text>
+    <div class="text-holder">They say we are choosy with our meats - you will
+      believe it when we tell you that we only serve the very premium young male goat approximately 6-8 months old with
+      meat so tender that it will melt in your mouth.</div>
+  </div>
+
+  <ion-list lines="full">
+    <ion-item *ngFor="let food of shop;let i = index">
+
+      <div>Quantity</div>
+      <div slot="end">
+        <ion-icon name="remove-circle" (click)="decrementQty(i)"></ion-icon>
+        {{food.qty}}
+        <ion-icon name="add-circle" (click)="incrementQty(i)"></ion-icon>
+      </div>
+      <!-- <ion-icon name="add-circle" (click)="incrementQty(i)" item-right></ion-icon>
+          <ion-input type="number" min="0" [(ngModel)]="food.qty"></ion-input>
+          <ion-icon name="remove-circle" (click)="decrementQty(i)" item-right></ion-icon> -->
+    </ion-item>
+    <ion-item>
+      Price
+      <div slot="end">
+        <i class="fa fa-tag"></i>&nbsp; 549.00
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" routerLink="/addtocart"  >
+    <ion-icon name="add-outline"></ion-icon>&nbsp;Add to Cart
+  </ion-button>
+</ion-content>

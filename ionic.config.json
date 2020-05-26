@@ -1,0 +1,7 @@
+{
+  "name": "myLocalShop",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

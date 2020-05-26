@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>My Local Shop</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <i class="fa fa-cart-plus fa-2x"></i>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <img src="https://image.shutterstock.com/image-photo/raw-chicken-meat-fillet-thigh-260nw-1144557188.jpg" />
+    </ion-slide>
+    <ion-slide>
+      <img src="https://static.freshtohome.com/media/banner/supreme-goat-10-percent-off-mbl.jpg" />
+    </ion-slide>
+    <ion-slide>
+      <img src="https://static.freshtohome.com/media/banner/75_75_Offer_FIRST75_mbl.jpg" />
+    </ion-slide>
+  </ion-slides>
+
+
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-text-center ion-padding-top">
+      <ion-col>
+        <h5 class="ion-text-center"><b>Meat Categories</b></h5>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card routerLink="/categories" >
+          <img src="https://static.freshtohome.com/images/mobile/home/categories/chicken-01.jpg">
+          <h6 class="ion-text-center"><b>Chicken</b></h6>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card>
+          <img src="https://static.freshtohome.com/images/mobile/home/categories/mutton-01.jpg">
+          <h6 class="ion-text-center"><b>Mutton</b></h6>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6" offset="3">
+        <ion-card>
+          <img src="https://image.freepik.com/free-photo/nutritious-protein-yolk-life-organic_1323-70.jpg">
+          <h6 class="ion-text-center"><b>Egg</b></h6>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
