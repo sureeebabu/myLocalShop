@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -10,7 +10,40 @@ import { PermissionsService } from './services/persmission/permissions.service';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  public selectedIndex = 0;
+  public appPages = [
+    {
+      title: 'Home',
+      url: '/home',
+      icon: 'home'
+    },
+    {
+      title: 'Edit Profile',
+      url: '/',
+      icon: 'person'
+    },
+    {
+      title: 'My Cart',
+      url: '/',
+      icon: 'cart'
+    },
+    {
+      title: 'Change Password',
+      url: '/',
+      icon: 'lock-closed'
+    },
+    {
+      title: 'About Us',
+      url: '/',
+      icon: 'person-circle'
+    },
+    {
+      title: 'Contact US',
+      url: '/',
+      icon: 'call'
+    }
+  ];
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -21,6 +54,12 @@ export class AppComponent {
     this.initializeApp();
   }
 
+  ngOnInit() {
+    const path = window.location.pathname.split('folder/')[1];
+    if (path !== undefined) {
+      this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+    }
+  }
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleLightContent();

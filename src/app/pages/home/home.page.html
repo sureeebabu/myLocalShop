@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>My Local Shop</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-buttons slot="end">
       <ion-button>
         <i class="fa fa-cart-plus fa-2x"></i>
@@ -38,14 +41,14 @@
       </ion-col>
 
       <ion-col size="6">
-        <ion-card>
+        <ion-card routerLink="/categories" >
           <img src="https://static.freshtohome.com/images/mobile/home/categories/mutton-01.jpg">
           <h6 class="ion-text-center"><b>Mutton</b></h6>
         </ion-card>
       </ion-col>
 
       <ion-col size="6" offset="3">
-        <ion-card>
+        <ion-card routerLink="/categories" >
           <img src="https://image.freepik.com/free-photo/nutritious-protein-yolk-life-organic_1323-70.jpg">
           <h6 class="ion-text-center"><b>Egg</b></h6>
         </ion-card>
