@@ -29,6 +29,11 @@ export class AppComponent implements OnInit {
       icon: 'cart'
     },
     {
+      title: 'Notification',
+      url: '/',
+      icon: 'notifications-circle'
+    },
+    {
       title: 'Change Password',
       url: '/',
       icon: 'lock-closed'
@@ -42,6 +47,11 @@ export class AppComponent implements OnInit {
       title: 'Contact US',
       url: '/',
       icon: 'call'
+    },
+    {
+      title: 'FAQs',
+      url: '/',
+      icon: 'help-circle'
     }
   ];
   constructor(
@@ -65,12 +75,12 @@ export class AppComponent implements OnInit {
       this.statusBar.styleLightContent();
       this.splashScreen.hide();
       this.androidPermission.checkGPSPermission();
-      this.networkService.onNetworkChange().subscribe((status: ConnectionStatus) => {
-        console.log(status);
-        // if (status === ConnectionStatus.Online) {
-        //   this.offlineManager.checkForEvents().subscribe();
-        // }
-      });
+      // this.networkService.onNetworkChange().subscribe((status: ConnectionStatus) => {
+      // console.log(status);
+      // if (status === ConnectionStatus.Online) {
+      //   this.offlineManager.checkForEvents().subscribe();
+      // }
+      // });
     });
   }
 }

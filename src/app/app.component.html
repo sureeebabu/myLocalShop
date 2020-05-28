@@ -1,7 +1,14 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
+      
       <ion-content>
+        <div class="ion-text-center ion-padding-top sideMenuBg">
+          <img class="rounded-circle" alt="75x75" src="assets/noImg.png" style="width: 100px; height: 100px;">
+          <p>
+            <ion-text color="dark">Customer Name</ion-text>
+          </p>
+        </div>
         <ion-list id="inbox-list">
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="true" [class.selected]="selectedIndex == i">
